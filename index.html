@@ -8,7 +8,9 @@
 </head>
 
 <body>
-<!-- partial:index.partial.html -->
+
+
+
 <header class="header">
   <div class="container">
    <nav class="menu">
@@ -45,6 +47,50 @@
     </div>
   </div>
 </header>
+
+<div class="popup visually-hidden">
+  <div class="popup-container">
+    <div class="feedback">
+      <header class="feedback-header">
+        <h2 class="header-title">ваш фидбек</h2>
+      </header>
+      <div class="feedback-content">
+        <form action="" class="feedback-form">
+          <label for="activity" class="feedback-label">Как часто вы заходите на сайт?</label>
+          <select id="activity" class="field feedback-field" required>
+            <option value="everyday">Почти каждый день</option>
+            <option value="twice-week">Раз в несколько дней</option>
+            <option value="twice-month">Раз в несколько недель</option>
+            <option value="twice-year">несколько раз в год</option>
+          </select>
+          <div class="form-mail">
+            <span class="mail-text">Вы подписаны на e-mail рассылку?</span>
+
+            <label class="checkbox-group">
+              <input type="radio" class="mail" name="mail" required>
+              <span class="checkbox-text">Да</span>
+            </label>
+
+            <label class="checkbox-group">
+              <input type="radio" class="mail" name="mail" required>
+              <span class="checkbox-text">Нет</span>
+            </label>
+          </div>
+           <div class="form-group">
+             <label class="field-group">
+                <span class="field-label">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
+                <textarea class="field textarea" placeholder="Может, больше рецептов?" required></textarea>
+             </label>
+           </div>
+           <button type="submit" class="button-submit">отправить</button>
+        </form>
+      </div>
+    </div>
+    <button class="popup-close" type="button">
+      <span class="visually-hidden">Закрыть окно</span>
+    </button>
+  </div>
+</div>
 
 <main>
   <div class="trends">
@@ -297,8 +343,8 @@
   <aside>
     <div class="holder">
       <section class="post-section">
-      <div class="latest-posts">
-        <h3 class="title">новые посты</h3>  
+      <div class="title-container">
+        <h3 class="title title-aside">новые посты</h3>  
       </div>
   
       <article class="post-info">
@@ -367,7 +413,7 @@
       </article>
       </section>
     
-    <section class="search-section">
+    <section class="aside-section">
       <form class="search">
         <label class="search-group">
           <input class="field" name="query" placeholder="Найти..." alt="<поле поиска>" required>
@@ -380,8 +426,10 @@
       </section>
       
       
-    <section class="submit-group">
-      <h3 class="title">Рассылка</h3>
+    <section class="aside-section">
+      <div class="title-container">
+      <h3 class="title title-aside">Рассылка</h3>
+    </div>
       <form class="form-group">
         <label class="field-group">
           <input type="email" class="field" placeholder="Ваш email-адрес" alt="<Поле для e-mail>" required>
@@ -391,8 +439,10 @@
       </form>
       </section>
     
-      <section class="tag-group">
-        <h3 class="title">Теги</h3>
+      <section class="aside-section">
+        <div class="title-container">
+        <h3 class="title title-aside">Теги</h3>
+      </div>
           <ul class="tag-list">
             <li class="tag-list-item">
               <a class="tag-link" href="#0">fashion</a>
@@ -421,8 +471,10 @@
           </ul>
       </section>
     
-      <section class="theme-group">
-        <h3 class="title">Темы</h3>
+      <section class="aside-section">
+        <div class="title-container">
+        <h3 class="title title-aside">Темы</h3>
+      </div>
           <ul class="theme-list">
             <li class="theme-list-item">
               <a class="theme-link" href="#0">красота</a>
@@ -461,6 +513,7 @@
     <div class="shop-list">
 
       <article class="shop-card">
+        <div class="picture-preview">
         <picture class="picture">
           <source 
             media="(min-width: 1200px)"
@@ -470,8 +523,9 @@
             srcset="images/shop-item-tablet1.jpg">
           <source  media="(max-width: 639px)"
             srcset="images/shop-item-mobile1.jpg">
-          <img src="images/shop-item-desk1.jpg" alt="Подушка">
+          <img class="trend-image" src="images/shop-item-desk1.jpg" alt="Подушка">
         </picture>
+      </div>
         <div class="shop-info">
           <h2 class="shop-title">подушки на диван</h2>
           <p>Набор из двух подушек с модными принтами. Видео о создании <a class="trend-link" href="#0">здесь</a>.</p>
@@ -479,10 +533,10 @@
         <div class="purchase">
           <div class="purchase-container">
             <div class="price-container">
-              <div class="old-price"> 1000 Р</div>
-              <div class="price">800 Р</div>
+              <div class="old-price"> 1000<span class="rub">Р</span> </div>
+              <div class="price">800<span class="rub">Р</span> </div>
             </div>
-            <button type="submit" class="button-purchase">в магазин</button>
+            <a type="submit" class="button-purchase">в магазин</a>
           </div>
         </div>
         </div>
@@ -499,7 +553,7 @@
             srcset="images/shop-item-tablet2.jpg">
           <source  media="(max-width: 639px)"
             srcset="images/shop-item-mobile2.jpg">
-          <img src="images/shop-item-desk2.jpg" alt="Кукла зайчик">
+          <img class="trend-image" src="images/shop-item-desk2.jpg" alt="Кукла зайчик">
         </picture>
         </div>
         <div class="shop-info">
@@ -510,15 +564,16 @@
         <div class="purchase">
           <div class="purchase-container">
             <div class="price-container">
-              <div class="price">3500 Р</div>
+              <div class="price">3500 <span class="rub">Р</span></div>
             </div>
-            <button type="submit" class="button-purchase">в магазин</button>
+            <a type="submit" class="button-purchase">в магазин</a>
           </div>
         </div>
         </div>
       </article>
 
       <article class="shop-card">
+        <div class="picture-preview">
         <picture class="picture">
           <source 
             media="(min-width: 1200px)"
@@ -528,18 +583,19 @@
             srcset="images/shop-item-tablet3.jpg">
           <source  media="(max-width: 639px)"
             srcset="images/shop-item-mobile3.jpg">
-          <img src="images/shop-item-desk3.jpg" alt="рамка для интерьера">
+          <img class="trend-image" src="images/shop-item-desk3.jpg" alt="рамка для интерьера">
         </picture>
+      </div>
         <div class="shop-info">
           <h2 class="shop-title">шестиугольная рамка</h2>
           <p>Необычная рамка для украшения дома из видео <a class="trend-link" href="#0">«Как сделать рамку из подручных средств за 30 минут»</a></p>
         <div class="purchase">
             <div class="purchase-container">
               <div class="price-container">
-                <div class="old-price">500 Р</div>
-                <div class="price">400 Р</div>
+                <div class="old-price">500 <span class="rub">Р</span></div>
+                <div class="price">400 <span class="rub">Р</span></div>
               </div>
-            <button type="submit" class="button-purchase">в магазин</button>
+            <a type="submit" class="button-purchase">в магазин</a>
             </div>
           </div>
         </div>
